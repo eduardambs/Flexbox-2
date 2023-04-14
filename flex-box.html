@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemplos Flexbox</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .container {
+        width: 70%;
+        margin: 0 auto 0 auto;
+        background-color: rgb(54, 54, 54);
+        color: rgb(254, 254, 254);
+      }
+
+      .flexbase {
+        width: 400px;
+        height: 150px;
+        background-color: rgb(57, 119, 123);
+        margin: auto;
+        /*Ativando flexbox numa div*/
+        display: flex;
+        /*align-items: center; flex-start; flex-end;*/
+        align-items: center; /*Verticalmente justify-content*/
+        /*justify-content: center; flex-start; flex-end;*/
+        /*Adicionar espaço entre os elementos: space-around; space-between; space-evenly;*/
+        /* justify-content: center; /*centralizou em relação a vertical*/
+        /* justify-content: space-evenly; */
+      }
+
+      .flexbase > span {
+        background-color: rgb(100, 129, 129);
+        border-radius: 4px;
+      }
+
+      .flex1 {
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+      }
+
+      .flex2 {
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+      }
+
+      .flex2 > span:nth-of-type(1){ /*Selecione o span que é filho de flex2 a ordem fica no parêntese*/
+        background-color: rgb(129, 164, 168);
+        align-self: flex-start ; /*Alterando a posição do elemento 1 do 2º span*/
+        order: 1;
+      }
+
+      .flex2 > span:nth-of-type(2){
+        background-color: rgb(129, 164, 168);
+        align-self: flex-end ; /*Alterando a posição do elemento 1 do 2º span*/
+        order: 3; /*A ordem tem prioridade de local */
+      }
+
+      .flex3{
+        justify-content: space-between;
+      }
+
+      .flex3 > span:nth-of-type(1){
+        background-color: rgb(210, 215, 214);
+        flex-basis: 120px;
+        flex-grow: 1; /*parece com o ordem*/
+        text-align: center;
+      }
+
+      .flex3 > span:nth-of-type(2){
+        background-color: wheat;
+        flex-basis: 120px;
+        /* flex-grow: 2; */ /*aumenta*/
+        flex-shrink: 2; /*diminui*/ 
+        text-align: center;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- VsCode Emmet -->
+      <!-- table>(tr>td*2)*10 -->
+    </div>
+    <div class="flexbase flex1">
+      <span>Texto 1</span>
+      <span>Texto 2</span>
+      <span>Texto 3</span>
+      <span>Texto 4</span>
+    </div>
+
+    <div class="flexbase flex2">
+      <span>Texto 1</span>
+      <span>Texto 2</span>
+      <span>Texto 3</span>
+      <span>Texto 4</span>
+    </div>
+
+    <div class="flexbase flex3">
+      <span>Texto 1</span>
+      <span>Texto 2</span>
+      <span>Texto 3</span>
+      <span>Texto 4</span>
+    </div>
+  </body>
+</html>
